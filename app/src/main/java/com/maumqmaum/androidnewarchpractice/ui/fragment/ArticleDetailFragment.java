@@ -7,7 +7,6 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,7 @@ import com.maumqmaum.androidnewarchpractice.viewmodel.ArticleListViewModel;
 
 import java.util.List;
 
-public class ArticleDetailFragment extends Fragment implements LifecycleRegistryOwner {
+public class ArticleDetailFragment extends BaseFragment implements LifecycleRegistryOwner {
 
     private static final String KEY_POSITION = "position";
 
