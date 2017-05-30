@@ -1,3 +1,6 @@
+### Demo
+![](https://im3.ezgif.com/tmp/ezgif-3-68bcf4f125.gif)
+
 ### 목적
 각 화면에서 공통의 모델을 사용하는경우 데이터를 모두 동기화하여 동일한 View로 관리하기 위해서입니다.  
 LiveData 및 ViewModel을 사용하기 전에는 RxBus를 통해서 백그라운드의 View를 갱신하였었습니다.  
