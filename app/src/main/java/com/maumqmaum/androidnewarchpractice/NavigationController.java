@@ -7,14 +7,13 @@ import android.util.Log;
 import com.maumqmaum.androidnewarchpractice.ui.fragment.ArticleDetailFragment;
 import com.maumqmaum.androidnewarchpractice.ui.fragment.MainFragment;
 
-//TODO : Use Dagger
 public class NavigationController {
 
     private static final String FRAGMENT_MAIN = "main";
 
     private final FragmentManager fragmentManager;
 
-    NavigationController(MainActivity mainActivity) {
+    public NavigationController(MainActivity mainActivity) {
         this.fragmentManager = mainActivity.getSupportFragmentManager();
     }
 

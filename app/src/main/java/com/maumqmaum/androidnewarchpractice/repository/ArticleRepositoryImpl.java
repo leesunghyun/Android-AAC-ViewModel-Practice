@@ -8,7 +8,6 @@ import com.maumqmaum.androidnewarchpractice.model.Article;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO : Use Dagger
 public class ArticleRepositoryImpl implements ArticleRepository {
 
     public List<MutableLiveData<Article>> getArticleList() {
