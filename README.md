@@ -16,4 +16,5 @@ ViewModel의 경우 Activity 단위로 생성하는것이 가능하므로 서로
 Single Activity Pattern을 사용하며 모든 화면을 Fragment로 구성하였습니다.
 
 ### Branch
-master - Use LiveData, ViewModel.
+basic-livedata-viewmodel > Use LiveData, ViewModel.  
+dagger > Use LiveData, ViewModel, dagger2
