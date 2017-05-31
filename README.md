@@ -34,3 +34,4 @@ Single Activity Pattern을 사용하며 모든 화면을 Fragment로 구성하�
 ### Branch
 basic-livedata-viewmodel > Use LiveData, ViewModel.  
 dagger > Use LiveData, ViewModel, Dagger2.  
+dagger-databinding -> Use LiveData, ViewModel, Dagger2, DataBinding.
