@@ -5,17 +5,17 @@ import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.maumqmaum.androidnewarchpractice.R;
+import com.maumqmaum.androidnewarchpractice.databinding.FragmentArticleDetailBinding;
 import com.maumqmaum.androidnewarchpractice.model.Article;
 import com.maumqmaum.androidnewarchpractice.viewmodel.ArticleListViewModel;
 
@@ -26,12 +26,7 @@ public class ArticleDetailFragment extends BaseFragment implements LifecycleRegi
     private static final String KEY_POSITION = "position";
 
     private LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
-
-    private EditText titleView;
-    private EditText descriptionView;
-    private EditText authorView;
-    private CheckBox likeCheckBox;
-
+    private FragmentArticleDetailBinding binding;
     private MutableLiveData<Article> liveArticle;
 
     public static ArticleDetailFragment newInstance(int position) {
@@ -49,7 +44,8 @@ public class ArticleDetailFragment extends BaseFragment implements LifecycleRegi
         if (args != null) {
             initArticle(args.getInt(KEY_POSITION));
         }
-        return inflater.inflate(R.layout.fragment_article_detail, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_article_detail, container, false);
+        return binding.getRoot();
     }
 
     private void initArticle(int position) {
@@ -63,10 +59,6 @@ public class ArticleDetailFragment extends BaseFragment implements LifecycleRegi
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        titleView = (EditText) view.findViewById(R.id.title);
-        descriptionView = (EditText) view.findViewById(R.id.description);
-        authorView = (EditText) view.findViewById(R.id.author);
-        likeCheckBox = (CheckBox) view.findViewById(R.id.like_check_box);
         Button saveButton = (Button) view.findViewById(R.id.save_button);
         liveArticle.observe(this, new Observer<Article>() {
             @Override
@@ -74,25 +66,14 @@ public class ArticleDetailFragment extends BaseFragment implements LifecycleRegi
                 if (article == null) {
                     return;
                 }
-                titleView.setText(article.title);
-                descriptionView.setText(article.description);
-                authorView.setText(article.author);
-                likeCheckBox.setChecked(article.isLiked);
+                binding.setArticle(article);
             }
         });
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Article article = liveArticle.getValue();
-                if (article == null) {
-                    return;
-                }
-                article.title = titleView.getText().toString();
-                article.description = descriptionView.getText().toString();
-                article.author = authorView.getText().toString();
-                article.isLiked = likeCheckBox.isChecked();
-                liveArticle.postValue(article);
+                liveArticle.postValue(binding.getArticle());
                 Toast.makeText(getContext(), "Saved!", Toast.LENGTH_SHORT).show();
             }
         });
