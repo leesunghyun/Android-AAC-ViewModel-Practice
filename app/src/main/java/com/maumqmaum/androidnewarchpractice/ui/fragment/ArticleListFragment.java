@@ -52,7 +52,7 @@ public class ArticleListFragment extends BaseFragment implements LifecycleRegist
             @Override
             public void onClick(View v) {
                 List<MutableLiveData<Article>> list = viewModel.getArticleList().getValue();
-                if (list != null && list.size() > 0) {
+                if (list != null && !list.isEmpty()) {
                     list.remove(0);
                     viewModel.getArticleList().postValue(list);
                 }
