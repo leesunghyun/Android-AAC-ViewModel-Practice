@@ -3,16 +3,17 @@ package com.maumqmaum.androidnewarchpractice.ui.adapter;
 import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
+import android.databinding.DataBindingUtil;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
 import com.maumqmaum.androidnewarchpractice.NavigationController;
 import com.maumqmaum.androidnewarchpractice.R;
+import com.maumqmaum.androidnewarchpractice.databinding.ListItemArticleBinding;
 import com.maumqmaum.androidnewarchpractice.model.Article;
 
 import java.util.List;
@@ -49,7 +50,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
             }
         });
 
-        holder.likeCheckBox.setOnClickListener(new View.OnClickListener() {
+        holder.binding.likeCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CheckBox checkBox = (CheckBox) v;
@@ -67,10 +68,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
                 if (article == null) {
                     return;
                 }
-                holder.title.setText(article.title);
-                holder.description.setText(article.description);
-                holder.author.setText(article.author);
-                holder.likeCheckBox.setChecked(article.isLiked);
+                holder.binding.setArticle(article);
             }
         });
     }
@@ -91,17 +89,11 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
 
     class ArticleListViewHolder extends RecyclerView.ViewHolder {
 
-        TextView title;
-        TextView description;
-        TextView author;
-        CheckBox likeCheckBox;
+        ListItemArticleBinding binding;
 
         ArticleListViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
-            description = (TextView) itemView.findViewById(R.id.description);
-            author = (TextView) itemView.findViewById(R.id.author);
-            likeCheckBox = (CheckBox) itemView.findViewById(R.id.like_check_box);
+            binding = DataBindingUtil.bind(itemView);
         }
     }
 }
