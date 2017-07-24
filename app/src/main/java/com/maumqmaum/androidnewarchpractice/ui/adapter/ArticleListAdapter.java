@@ -40,9 +40,6 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     @Override
     public void onBindViewHolder(final ArticleListViewHolder holder, int position) {
         final MutableLiveData<Article> liveArticle = articleList.get(position);
-        if (liveArticle.hasObservers()) {
-            liveArticle.removeObservers(lifecycleOwner);
-        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +77,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
 
     public void setArticleList(List<MutableLiveData<Article>> articleList) {
         this.articleList = articleList;
-        notifyDataSetChanged();
+        notifyItemRemoved(0);
     }
 
     public List<MutableLiveData<Article>> getArticleList() {
