@@ -1,6 +1,12 @@
 ### Demo
 ![](http://cfile24.uf.tistory.com/image/23332E3C592E268C34689B)
 
+
+### Branch
+basic-livedata-viewmodel > Use LiveData, ViewModel.  
+dagger > Use LiveData, ViewModel, Dagger2.  
+dagger-databinding -> Use LiveData, ViewModel, Dagger2, DataBinding.
+
 ### purpose
 
 If you use a same model in each screen, I want to synchronize all the model and manage and update same views.
@@ -17,6 +23,20 @@ Since ViewModel can be created in Activity unit,
 it is difficult to share ViewModel between different activities. 
 Single Activity Pattern is used and all screens are configured as Fragment.
 
+### 目的
+各画面で共通のモデルを使う場合、データを全て同期したViewとして管理するためです。
+LiveDataとViewModelを使う以前には、RxBusなどを使ってBackgroundのViewを更新しました。
+Backgroundのリストのデータを更新するためには変更されたItemをリスト検索を通じて探した後更新する。
+同じモデルを使う画面が増えるほどメンテナンスが難しい問題がありました。
+
+このpractice projectは一つのモデルを二つのFragmentで共有するように作られました。
+ArticleListFragment가があって、Article ListのItemをクリックする場合、ArticleDetailFragmentに遷移します。
+ArticleDetailFragmentではArticleを修正することが可能で、保存する場合、BackgroundにあるArticleListFragmentのUiも最新状態に更新されます。
+
+### Single Activity Pattern使用
+ViewModelの場合、Activity単位で生成することが可能で、違うActivity間のViewModelの共有は難しいと判断し
+Single Activity Patternを利用して全ての画面をFragmentで構成しました。
+
 ### 목적
 각 화면에서 공통의 모델을 사용하는경우 데이터를 모두 동기화하여 동일한 View로 관리하기 위해서입니다.  
 LiveData 및 ViewModel을 사용하기 전에는 RxBus를 통해서 백그라운드의 View를 갱신하였었습니다.  
@@ -30,8 +50,3 @@ ArticleDetailFragment에서는 Article을 수정할 수 있으며 저장할 경�
 ### Single Activity Pattern 사용
 ViewModel의 경우 Activity 단위로 생성하는것이 가능하므로 서로 다른 Activity간의 ViewModel을 공유하는것은 어렵다고 판단하여
 Single Activity Pattern을 사용하며 모든 화면을 Fragment로 구성하였습니다.
-
-### Branch
-basic-livedata-viewmodel > Use LiveData, ViewModel.  
-dagger > Use LiveData, ViewModel, Dagger2.  
-dagger-databinding -> Use LiveData, ViewModel, Dagger2, DataBinding.
