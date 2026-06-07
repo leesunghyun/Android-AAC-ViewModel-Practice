@@ -9,6 +9,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.example.viewmodelmigration.core.Article
 import com.example.viewmodelmigration.core.ArticleListUiState
@@ -22,7 +23,9 @@ fun ArticleListScreen(
     Column {
         Button(
             onClick = onDeleteFirstClick,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier
+                .padding(16.dp)
+                .testTag("delete-first-article-button")
         ) {
             Text("Delete first article")
         }
@@ -47,6 +50,7 @@ private fun ArticleRow(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
+            .testTag("article-row-${article.id}")
             .clickable(onClick = onClick)
     ) {
         Column(

@@ -14,6 +14,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.example.viewmodelmigration.core.Article
 
@@ -38,27 +39,32 @@ fun ArticleDetailScreen(
 
         OutlinedTextField(
             value = titleState,
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag("detail-title-field"),
             onValueChange = {
                 titleState = it
             },
             label = {
                 Text("Title")
-            },
-            modifier = Modifier.fillMaxWidth()
+            }
         )
 
         OutlinedTextField(
             value = bodyState,
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag("detail-body-field"),
             onValueChange = {
                 bodyState = it
             },
             label = {
                 Text("Body")
-            },
-            modifier = Modifier.fillMaxWidth()
+            }
         )
 
         Button(
+            modifier = Modifier.testTag("detail-save-button"),
             onClick = {
                 onSaveClick(
                     article.copy(
@@ -74,6 +80,7 @@ fun ArticleDetailScreen(
         Spacer(modifier = Modifier.height(8.dp))
 
         Button(
+            modifier = Modifier.testTag("detail-back-button"),
             onClick = onBackClick
         ) {
             Text("Back")
