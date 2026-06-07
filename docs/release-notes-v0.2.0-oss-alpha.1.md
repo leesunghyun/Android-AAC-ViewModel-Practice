@@ -5,7 +5,7 @@ This release notes file is prepared in advance for the v0.2 iteration.
 ## Summary
 
 - Improve migration documentation completeness
-- Replace README demo placeholder with a real recording
+- Replace README demo placeholder with a real recording (`docs/images/demo.gif`)
 - Expand Compose UI coverage and UX reliability checks
 - Prepare release process continuity for the next alpha tag
 
@@ -23,4 +23,4 @@ This release notes file is prepared in advance for the v0.2 iteration.
 
 ## Known limitations
 
-- v0.2 demo recording, v0.2 release artifact, and optional advanced UX polish are pending until the next implementation PR.
+- v0.2 release artifact and optional advanced UX polish are pending until the next implementation PR.

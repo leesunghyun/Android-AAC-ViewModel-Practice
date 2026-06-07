@@ -139,8 +139,6 @@ Manual smoke check:
 3. Tap **Save** and return to list.
 4. Confirm the edited item is immediately updated in the list.
 
-This preview is currently an onboarding illustration placeholder. Replace with a real-device demo recording in v0.2.
-
 ## Release status
 
 - First OSS alpha release: [v0.1.0-oss-alpha.1](https://github.com/leesunghyun/android-viewmodel-migration-lab/releases/tag/v0.1.0-oss-alpha.1)
@@ -196,7 +194,7 @@ Only `app/` is built in the first alpha.
 
 ## Next milestones (planned, v0.2)
 
-- [ ] Replace demo placeholder with real screen recording (`docs/images/demo.gif`)
+- [x] Replace demo placeholder with real screen recording (`docs/images/demo.gif`)
 - [ ] Improve Article detail validation UX
 - [ ] Add before/after diagram for v0.2 release docs
 - [ ] Improve connected test coverage for back-without-save and invalid selection scenarios

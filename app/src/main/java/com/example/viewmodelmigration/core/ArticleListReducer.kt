@@ -8,7 +8,11 @@ object ArticleListReducer {
         return when (action) {
             is ArticleListAction.SelectArticle -> {
                 state.copy(
-                    selectedArticleId = action.articleId
+                    selectedArticleId = if (state.articles.any { it.id == action.articleId }) {
+                        action.articleId
+                    } else {
+                        null
+                    }
                 )
             }
 
