@@ -51,6 +51,7 @@ The future modern version will provide:
 
 - `README.md`: project purpose and progress
 - `docs/`: migration notes and legacy baseline records
+- `legacy-app/`: archived legacy baseline code
 - `.github/`: pull request and issue templates
 
 ## Migration docs
@@ -61,8 +62,9 @@ The future modern version will provide:
 
 ## Roadmap
 
-- [x] Preserve legacy baseline as archive
+- [x] Preserve legacy baseline as archive (`legacy-app/`)
 - [x] Preserve legacy 2017 snapshot (`legacy/2017-original`, `v0.0.0-legacy-2017`)
+- [x] Move original app code into `legacy-app/`
 - [ ] Add modern app baseline
 - [ ] Add Article domain/model and reducer
 - [ ] Add ArticleListReducer tests
