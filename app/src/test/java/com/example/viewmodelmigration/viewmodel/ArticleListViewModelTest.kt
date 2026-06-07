@@ -59,4 +59,14 @@ class ArticleListViewModelTest {
 
         assertNull(viewModel.uiState.value.selectedArticleId)
     }
+
+    @Test
+    fun clearSelection_clearsSelectedArticleId() {
+        val viewModel = ArticleListViewModel()
+
+        viewModel.selectArticle("1")
+        viewModel.clearSelection()
+
+        assertNull(viewModel.uiState.value.selectedArticleId)
+    }
 }

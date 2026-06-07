@@ -88,4 +88,21 @@ class ArticleListReducerTest {
         assertEquals(null, newState.selectedArticleId)
         assertEquals(1, newState.articles.size)
     }
+
+    @Test
+    fun clearSelection_setsSelectedArticleIdNull() {
+        val oldState = ArticleListUiState(
+            articles = listOf(
+                Article(id = "1", title = "Keep", body = "Body 1")
+            ),
+            selectedArticleId = "1"
+        )
+
+        val newState = ArticleListReducer.reduce(
+            state = oldState,
+            action = ArticleListAction.ClearSelection
+        )
+
+        assertEquals(null, newState.selectedArticleId)
+    }
 }
