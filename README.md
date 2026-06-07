@@ -4,6 +4,15 @@ A beginner-friendly OSS migration lab that modernizes a 2017 Android AAC ViewMod
 
 This repository is now in the **release readiness phase** of the OSS rebuild.
 
+## Requirements
+
+- Android Studio
+- JDK 17
+- Android SDK
+- Git
+
+If you use Android Studio, the bundled JBR is usually enough.
+
 ## Current status
 
 Completed in this phase:
@@ -49,22 +58,30 @@ The modern version provides:
    git clone https://github.com/leesunghyun/Android-AAC-ViewModel-Practice.git
    cd Android-AAC-ViewModel-Practice
    ```
-2. Build tests (first-time setup complete on CI)
+
+2. Run tests
+
+macOS / Linux:
    ```bash
    ./gradlew test
-   ```
-3. Build and install the debug app
-   ```bash
    ./gradlew assembleDebug
-   ./gradlew installDebug
    ```
-4. Open the project in Android Studio and run `app`.
 
-## Demo preview
+Windows:
+   ```bat
+   gradlew.bat test
+   gradlew.bat assembleDebug
+   ```
+
+3. Open in Android Studio and run the `app` module.
+
+## Demo
 
 The first alpha flow is: `List → Detail/Edit → Save → List` with shared state update.
 
-![v0.1.0 OSS alpha demo placeholder](docs/assets/v0.1.0-oss-alpha-demo-placeholder.svg)
+`v0.1.0-oss-alpha.1` currently uses a placeholder visual in this PR.
+
+Planned path (v0.2): `docs/images/demo.gif`
 
 ## Release status
 
@@ -77,10 +94,14 @@ For full release details and run verification commands, see:
 
 ## Project structure
 
-- `README.md`: project purpose and progress
-- `docs/`: migration notes and legacy baseline records
-- `legacy-app/`: archived legacy baseline code
-- `.github/`: pull request and issue templates
+```text
+app/        Modern Kotlin + Compose sample app (built in this alpha)
+legacy-app/ Original 2017 Android AAC sample (archive only, reference)
+docs/       Migration documentation and release notes
+```
+
+Only `app/` is built in the first alpha.
+`legacy-app/` is preserved for historical reference only.
 
 ## Migration docs
 
@@ -110,11 +131,11 @@ For full release details and run verification commands, see:
 - [x] Publish migration document bundle
 - [x] Add release notes and changelog section for v0.1.0-oss-alpha.1
 
-## Next milestones (draft)
+## Next milestones (planned, v0.2)
 
 - [ ] Add UI tests for article edit/delete interactions
 - [ ] Add `collectAsStateWithLifecycle` in Compose state collection
-- [ ] Replace placeholder demo image with real screen recording
+- [ ] Replace demo placeholder with real screen recording (`docs/images/demo.gif`)
 - [ ] Improve Article detail validation UX
 - [ ] Prepare v0.2.0 roadmap and release notes
 
