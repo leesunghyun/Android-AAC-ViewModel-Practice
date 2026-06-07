@@ -65,7 +65,7 @@ The future modern version will provide:
 - [x] Move original app code into `legacy-app/`
 - [x] Add modern app baseline
 - [x] Add Article domain/model and reducer
-- [ ] Add ArticleListReducer tests
+- [x] Add ArticleListReducer tests
 - [ ] Add ViewModel + StateFlow implementation
 - [ ] Add Compose screens
 - [ ] Add unit tests
