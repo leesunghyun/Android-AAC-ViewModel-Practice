@@ -1,17 +1,65 @@
 # Android ViewModel Migration Lab
 
-A beginner-friendly OSS migration lab that modernizes a 2017 Android AAC ViewModel shared-state sample with Kotlin, Compose, ViewModel, and StateFlow.
+AI-guided OSS lab for safely migrating legacy Android AAC/ViewModel shared-state samples to Kotlin, Compose, ViewModel, and StateFlow.
 
-This repository has completed its first OSS alpha release and is now preparing v0.2 improvements.
+This repository turns a 2017 Android AAC/ViewModel practice project into a documented, tested, AI-guided OSS migration lab where humans and AI coding agents can modernize legacy shared-state code through small, reviewable, guideline-driven pull requests.
 
-## Requirements
+## Motivation
 
-- Android Studio
-- JDK 17
-- Android SDK
-- Git
+Many Android apps still depend on older architecture patterns such as early Android Architecture Components, shared state between screens, and mixed legacy APIs.
 
-If you use Android Studio, the bundled JBR is usually enough.
+Small migration changes in those apps are risky, especially when multiple screens must stay synchronized. This repository turns a 2017 Android AAC/ViewModel practice sample into a documented, tested migration lab that can be followed safely.
+
+The goal is to provide a clear path where humans and AI coding agents can modernize legacy code in small, reviewable steps.
+
+This project started as `Android-AAC-ViewModel-Practice`, and the identity is now aligned to the migration-lab purpose.
+
+## What this project is
+
+- a legacy Android architecture migration lab
+- a small runnable Kotlin + Compose sample
+- a ViewModel + StateFlow shared-state example
+- a documentation-first OSS project
+- a reference workflow for AI-assisted migration pull requests
+
+## What this project is not
+
+- a production app
+- a full Android architecture framework
+- a business-domain sample
+- a Reserve.M project
+- a Hilt / Room / Firebase / Navigation showcase
+
+## Core scenario
+
+```text
+Article List
+↓
+Article Detail
+↓
+Edit Article
+↓
+Save
+↓
+Back to List
+↓
+Updated Article is reflected
+```
+
+## Current modern solution
+
+The modern version provides:
+
+- Kotlin + Compose UI
+- ViewModel
+- StateFlow
+- Reducer-style state updates
+
+## What this project will teach
+
+- How to keep shared state synchronized across multiple screens
+- How to migrate legacy Android Architecture Components patterns to modern Kotlin/Compose architecture
+- How to structure reducer and ViewModel tests
 
 ## Current status
 
@@ -30,33 +78,36 @@ Completed in this phase:
   - GitHub Release: `v0.1.0-oss-alpha.1`
   - Sample debug APK: `app-debug.apk`
 
-## What this project will teach
+## AI-guided migration workflow
 
-- How to keep shared state synchronized across multiple screens
-- How to migrate legacy Android Architecture Components patterns to modern Kotlin/Compose architecture
-- How to structure reducer and ViewModel tests
+This repository is designed so both humans and AI coding agents can follow the same process.
 
-## Original problem
+1. Read `docs/oss-remake-task-plan.md`
+2. Pick one migration task
+3. Create a small pull request
+4. Add/adjust tests for behavior changes
+5. Update documentation together with behavior changes
+6. Run `./gradlew test`
+7. Run `./gradlew assembleDebug`
+8. Merge only when scope is clear and CI is green
 
-The original project shared an `Article` model between screens:
-- List screen shows Articles
-- Detail screen edits a selected Article
-- Save should update the list state immediately
+The preferred approach is small, incremental migration.
 
-## Current modern solution
+## Requirements
 
-The modern version provides:
-- Kotlin + Compose UI
-- ViewModel
-- StateFlow
-- Reducer-style state updates
+- Android Studio
+- JDK 17
+- Android SDK
+- Git
+
+If you use Android Studio, the bundled JBR is usually enough.
 
 ## Quick start
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/leesunghyun/Android-AAC-ViewModel-Practice.git
-   cd Android-AAC-ViewModel-Practice
+   git clone https://github.com/leesunghyun/android-viewmodel-migration-lab.git
+   cd android-viewmodel-migration-lab
    ```
 
 2. Run tests
@@ -92,7 +143,7 @@ This preview is currently an onboarding illustration placeholder. Replace with a
 
 ## Release status
 
-- First OSS alpha release: [v0.1.0-oss-alpha.1](https://github.com/leesunghyun/Android-AAC-ViewModel-Practice/releases/tag/v0.1.0-oss-alpha.1)
+- First OSS alpha release: [v0.1.0-oss-alpha.1](https://github.com/leesunghyun/android-viewmodel-migration-lab/releases/tag/v0.1.0-oss-alpha.1)
 - APK is provided as a sample debug artifact for manual smoke testing (not production release).
 
 For full release details and run verification commands, see:
@@ -119,8 +170,13 @@ Only `app/` is built in the first alpha.
 - [Compose UI Guide](docs/05-compose-ui.md)
 - [Release Notes: v0.1.0-oss-alpha.1](docs/release-notes-v0.1.0-oss-alpha.1.md)
 - [Release Guide: v0.1.0-oss-alpha.1](docs/release-guide-v0.1.0-oss-alpha.1.md)
+- [Roadmap: v0.2.0](docs/roadmap-v0.2.0.md)
+- [Release Notes: v0.2.0-oss-alpha.1](docs/release-notes-v0.2.0-oss-alpha.1.md)
 - [Migration Task Plan (source of truth)](docs/oss-remake-task-plan.md)
 - [Codex for OSS](docs/codex-for-oss.md)
+
+## Archive
+
 - [Historical planning references](docs/planning/archive/oss-remake-plan-reference.md)
 
 ## Roadmap
@@ -140,14 +196,23 @@ Only `app/` is built in the first alpha.
 
 ## Next milestones (planned, v0.2)
 
-- [ ] Add UI tests for article edit/delete interactions
 - [ ] Replace demo placeholder with real screen recording (`docs/images/demo.gif`)
 - [ ] Improve Article detail validation UX
-- [ ] Prepare v0.2.0 roadmap and release notes
+- [ ] Add before/after diagram for v0.2 release docs
+- [ ] Improve connected test coverage for back-without-save and invalid selection scenarios
 
 ## Recently completed after v0.1.0
 
 - [x] Add `collectAsStateWithLifecycle` in Compose state collection
+- [x] Add Compose UI smoke tests (`ArticleUiSmokeTest`)
+
+## Repository settings
+
+The GitHub repository identity has been updated to match the migration-lab purpose:
+
+- Repository name: `android-viewmodel-migration-lab`
+- Description: `AI-guided OSS lab for safely migrating legacy Android AAC/ViewModel shared-state samples to Kotlin, Compose, ViewModel, and StateFlow.`
+- Topics: `android`, `kotlin`, `jetpack-compose`, `viewmodel`, `stateflow`, `legacy-code`, `migration-guide`, `ai-assisted-development`
 
 ## Contributing
 

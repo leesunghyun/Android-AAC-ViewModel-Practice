@@ -355,8 +355,8 @@ include(":app")
 GitHub Desktop 또는 터미널로 저장소를 가져옵니다.
 
 ```bash
-git clone https://github.com/leesunghyun/Android-AAC-ViewModel-Practice.git
-cd Android-AAC-ViewModel-Practice
+git clone https://github.com/leesunghyun/android-viewmodel-migration-lab.git
+cd android-viewmodel-migration-lab
 ```
 
 ---
