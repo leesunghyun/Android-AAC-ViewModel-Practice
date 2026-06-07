@@ -79,9 +79,16 @@ Windows:
 
 The first alpha flow is: `List → Detail/Edit → Save → List` with shared state update.
 
-`v0.1.0-oss-alpha.1` currently uses a placeholder visual in this PR.
+![List to detail to save flow](docs/images/demo.gif)
 
-Planned path (v0.2): `docs/images/demo.gif`
+Manual smoke check:
+
+1. Open the app and confirm the article list screen appears.
+2. Tap an article, open detail/edit, change title/body.
+3. Tap **Save** and return to list.
+4. Confirm the edited item is immediately updated in the list.
+
+This preview is currently an onboarding illustration placeholder. Replace with a real-device demo recording in v0.2.
 
 ## Release status
 
