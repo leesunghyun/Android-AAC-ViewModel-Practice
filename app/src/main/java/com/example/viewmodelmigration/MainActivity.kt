@@ -3,22 +3,18 @@ package com.example.viewmodelmigration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.viewmodelmigration.core.ArticleListUiState
+import com.example.viewmodelmigration.core.Article
+import com.example.viewmodelmigration.core.SampleArticles
 import com.example.viewmodelmigration.ui.ArticleDetailScreen
 import com.example.viewmodelmigration.ui.ArticleListScreen
 import com.example.viewmodelmigration.viewmodel.ArticleListViewModel
@@ -74,20 +70,33 @@ private fun AppRoot(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, name = "Article List")
 @Composable
-private fun AppRootPreview() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text("Preview")
-        Button(
-            onClick = {}
-        ) {
-            Text("List")
-        }
-    }
+private fun ArticleListScreenPreview() {
+    val previewState = ArticleListUiState(
+        articles = SampleArticles.create(),
+        selectedArticleId = null
+    )
+
+    ArticleListScreen(
+        uiState = previewState,
+        onArticleClick = {},
+        onDeleteFirstClick = {}
+    )
+}
+
+@Preview(showBackground = true, name = "Article Detail")
+@Composable
+private fun ArticleDetailScreenPreview() {
+    val previewArticle = Article(
+        id = "preview",
+        title = "Legacy ViewModel",
+        body = "How shared state was handled in older Android samples."
+    )
+
+    ArticleDetailScreen(
+        article = previewArticle,
+        onSaveClick = {},
+        onBackClick = {}
+    )
 }
