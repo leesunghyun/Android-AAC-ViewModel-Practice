@@ -33,6 +33,10 @@ class ArticleListViewModel : ViewModel() {
         dispatch(ArticleListAction.DeleteArticle(articleId))
     }
 
+    fun clearSelection() {
+        dispatch(ArticleListAction.ClearSelection)
+    }
+
     private fun dispatch(action: ArticleListAction) {
         _uiState.update { oldState ->
             ArticleListReducer.reduce(

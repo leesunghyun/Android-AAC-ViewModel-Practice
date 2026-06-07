@@ -3,6 +3,7 @@ package com.example.viewmodelmigration.viewmodel
 import com.example.viewmodelmigration.core.Article
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Test
 
 class ArticleListViewModelTest {
@@ -47,5 +48,15 @@ class ArticleListViewModelTest {
                 it.id == "1"
             }
         )
+    }
+
+    @Test
+    fun deleteSelectedArticle_clearsSelectedArticleId() {
+        val viewModel = ArticleListViewModel()
+
+        viewModel.selectArticle("1")
+        viewModel.deleteArticle("1")
+
+        assertNull(viewModel.uiState.value.selectedArticleId)
     }
 }

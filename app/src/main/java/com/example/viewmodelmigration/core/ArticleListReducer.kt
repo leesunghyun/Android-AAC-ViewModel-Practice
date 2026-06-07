@@ -36,6 +36,12 @@ object ArticleListReducer {
                     }
                 )
             }
+
+            is ArticleListAction.ClearSelection -> {
+                state.copy(
+                    selectedArticleId = null
+                )
+            }
         }
     }
 }
