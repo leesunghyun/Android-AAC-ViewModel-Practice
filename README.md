@@ -2,7 +2,7 @@
 
 A beginner-friendly OSS migration lab that modernizes a 2017 Android AAC ViewModel shared-state sample with Kotlin, Compose, ViewModel, and StateFlow.
 
-This repository is now in the **release readiness phase** of the OSS rebuild.
+This repository has completed its first OSS alpha release and is now preparing v0.2 improvements.
 
 ## Requirements
 
@@ -43,7 +43,7 @@ The original project shared an `Article` model between screens:
 - Detail screen edits a selected Article
 - Save should update the list state immediately
 
-## Planned modern solution
+## Current modern solution
 
 The modern version provides:
 - Kotlin + Compose UI
@@ -141,10 +141,13 @@ Only `app/` is built in the first alpha.
 ## Next milestones (planned, v0.2)
 
 - [ ] Add UI tests for article edit/delete interactions
-- [x] Add `collectAsStateWithLifecycle` in Compose state collection
 - [ ] Replace demo placeholder with real screen recording (`docs/images/demo.gif`)
 - [ ] Improve Article detail validation UX
 - [ ] Prepare v0.2.0 roadmap and release notes
+
+## Recently completed after v0.1.0
+
+- [x] Add `collectAsStateWithLifecycle` in Compose state collection
 
 ## Contributing
 

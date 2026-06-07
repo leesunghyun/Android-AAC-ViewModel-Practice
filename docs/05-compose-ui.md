@@ -49,7 +49,7 @@
 
 ## 3) 상태 연동 포인트
 
-- `collectAsState()`로 `uiState`를 구독
+- `collectAsStateWithLifecycle()`로 `uiState`를 lifecycle-aware하게 구독
 - 상세에서 저장 시:
   1. `onSaveClick(updatedArticle)`
   2. `ViewModel`에서 reducer로 `UpdateArticle` 실행
@@ -69,4 +69,3 @@
 
 - 이 단계는 교육/샘플 목적이므로 UI/UX는 최소 기능 위주
 - 현재 삭제 동작은 “첫 번째 항목 삭제” 데모로 두었으므로, 실제 요구사항 반영 시에는 선택 삭제 액션으로 바꿔야 함
-
