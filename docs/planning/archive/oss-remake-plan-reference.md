@@ -1,3 +1,18 @@
+# Historical Reference Only
+
+This document is an archived planning reference.
+
+Do not use this document as the execution plan.
+
+The source of truth is:
+- `oss-remake-task-plan.md`
+- `README.md`
+- GitHub Issues
+
+This file may include outdated ideas, discarded alternatives, or rough notes from earlier planning (including references, rough drafts, and broken citation fragments).
+
+---
+
 # 초보자용 전체 진행 순서
 
 목표는 이겁니다.

@@ -56,6 +56,8 @@ The future modern version will provide:
 ## Migration docs
 
 - [2017 Legacy Architecture](docs/01-legacy-architecture.md)
+- [Migration Task Plan (source of truth)](docs/oss-remake-task-plan.md)
+- [Historical planning references](docs/planning/archive/oss-remake-plan-reference.md)
 
 ## Roadmap
 

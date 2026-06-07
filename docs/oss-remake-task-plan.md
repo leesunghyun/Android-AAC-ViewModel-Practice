@@ -1,5 +1,12 @@
 # Android ViewModel Migration Lab OSS 리메이크 태스크 플랜
 
+## 실행 기준(Source of Truth)
+
+이 문서는 현재 실행 순서와 작업 범위를 정의하는 문서입니다.
+
+- 실행 계획의 기준: `oss-remake-task-plan.md`
+- 과거 초안/참고 문서: `docs/planning/archive/oss-remake-plan-reference.md`
+
 ## 0. 문서 목적
 
 이 문서는 `Android-AAC-ViewModel-Practice` 저장소를 **초보자 친화형 Android OSS 마이그레이션 랩**으로 리메이크하기 위한 실행 계획서입니다.
