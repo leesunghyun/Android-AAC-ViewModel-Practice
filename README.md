@@ -66,6 +66,7 @@ The future modern version will provide:
 - [LiveData to StateFlow](docs/04-livedata-to-stateflow.md)
 - [Compose UI Guide](docs/05-compose-ui.md)
 - [Release Notes: v0.1.0-oss-alpha.1](docs/release-notes-v0.1.0-oss-alpha.1.md)
+- [Release Guide: v0.1.0-oss-alpha.1](docs/release-guide-v0.1.0-oss-alpha.1.md)
 - [Migration Task Plan (source of truth)](docs/oss-remake-task-plan.md)
 - [Codex for OSS](docs/codex-for-oss.md)
 - [Historical planning references](docs/planning/archive/oss-remake-plan-reference.md)
