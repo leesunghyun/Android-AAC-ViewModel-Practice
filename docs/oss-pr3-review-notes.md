@@ -298,34 +298,49 @@ Not included yet:
 
 이 PR이 머지되면 다음 PR은 바로 코드로 가기 전에 **현대 앱 뼈대 정비 PR**이 좋습니다.
 
-## PR #4 추천 제목
+## PR #4 재리뷰 (최신)
+
+### 추천 제목
 
 ```text
-Add modern Kotlin Compose app baseline
+Add modern app baseline with Article state foundation
 ```
 
-## PR #4 범위
+### 현재 PR #4 실제 범위
 
 ```text
-기존 app/ → legacy-app/
-새 Kotlin + Compose app/ 추가
-settings.gradle.kts 정리
-build.gradle.kts 정리
-./gradlew assembleDebug 통과
+legacy-app 보존
++ modern Kotlin Compose app baseline
++ Article core state model
++ ArticleListReducer
++ reducer tests
 ```
 
-아직 Article/Reducer/ViewModel까지 넣지 않는 게 좋습니다.
-PR #4는 “빌드 가능한 현대 Android 뼈대”만 만드는 PR로 두세요.
+### 머지 판단
 
-그 다음에:
+- 현재는 **병합 승인** 상태입니다.
+- `ArticleListReducer`와 `ArticleListReducerTest`가 함께 들어와 이전 이슈(테스트 부재)는 해소됨.
+- 검증 실행(2026-06-07, JDK 21): `./gradlew test`, `./gradlew assembleDebug` 모두 PASS.
 
-```text
-PR #5: Add Article state model and reducer
-PR #6: Add reducer tests
-PR #7: Add StateFlow ViewModel
-PR #8: Add Compose list/detail screens
-PR #9: Add Android CI workflow
-```
+### 적용된 검증 환경
+
+- `JAVA_HOME=/Applications/Android Studio.app/Contents/jbr/Contents/Home`
+- `ANDROID_HOME=$HOME/Library/Android/sdk`
+- `gradle-wrapper` 업그레이드: `gradle-8.6-all.zip`
+- `kotlinCompilerExtensionVersion = 1.5.14`
+
+### 머지 전 필수 확인 (완료)
+
+1. `./gradlew test` 통과 ✅
+2. `./gradlew assembleDebug` 통과 ✅
+
+### 권장 다음 PR
+
+1) Article state model + reducer 기반 정합성 고도화  
+2) Detail/Edit/Save 흐름 추가  
+3) StateFlow ViewModel + UI 바인딩  
+4) Compose 리스트/상세 화면 정리  
+5) CI 도입
 
 이 순서가 안전합니다.
 
