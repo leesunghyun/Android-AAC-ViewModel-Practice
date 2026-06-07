@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.1.0-oss-alpha.1 - Modern Android Migration Lab Alpha
+## v0.1.0-oss-alpha.1 - 2026-06-07
 
 ### Added
 
@@ -17,12 +17,12 @@
 - Added Android CI workflow
 - Added migration documentation set for modern architecture and state flow
 - Added release workflow for tag-triggered `v0.1.0-oss-alpha.1` publish
-- Added release notes and published `v0.1.0-oss-alpha.1` GitHub release
+- Added release notes and published `v0.1.0-oss-alpha.1` GitHub release (sample debug APK asset)
 
 ### Preserved
 
 - Original 2017 Android AAC ViewModel sample preserved in `legacy-app/`
-- `v0.1.0-oss-alpha.1` tag and GitHub Release published
+- `v0.1.0-oss-alpha.1` tag and GitHub Release published as first OSS alpha milestone
 
 ### Known limitations
 
