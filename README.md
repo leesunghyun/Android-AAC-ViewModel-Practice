@@ -19,7 +19,9 @@ Completed in this phase:
 
 Not yet implemented:
 
-- Final migration documentation bundle
+- OSS release preparation:
+  - `v0.1.0-oss-alpha.1` 릴리스 메모
+  - CHANGELOG 정리 및 공개 릴리스 노트
 - OSS release documentation workflow
 
 ## What this project will teach
@@ -78,7 +80,7 @@ The future modern version will provide:
 - [x] Add Compose screens
 - [x] Add unit tests
 - [x] Add Android CI workflow
-- [ ] Publish migration document bundle
+- [x] Publish migration document bundle
 - [ ] Add release metadata for v0.1.0-oss-alpha.1
 
 ## Contributing
