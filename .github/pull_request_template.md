@@ -18,7 +18,9 @@ Explain what changed.
 - [ ] I ran `./gradlew test`
 - [ ] I ran `./gradlew assembleDebug`
 - [ ] I checked the app manually
+- [ ] Not applicable: docs-only change
 
 ## Notes
 
-Write any failure reason, known issue, or follow-up task here.
+- If any test/build command is not run, explain why.
+- Write any failure reason, known issue, or follow-up task here.

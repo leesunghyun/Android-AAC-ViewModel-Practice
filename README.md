@@ -2,11 +2,30 @@
 
 A beginner-friendly OSS migration lab that modernizes a 2017 Android AAC ViewModel shared-state sample with Kotlin, Compose, ViewModel, and StateFlow.
 
-## What this project teaches
+This repository is in the **OSS setup phase** of the migration.
+
+## Current status
+
+Completed in this phase:
+
+- Project direction clarified as `Android ViewModel Migration Lab`
+- Legacy README preserved as historical documentation
+- OSS metadata files added (`LICENSE`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`)
+- GitHub issue/PR templates added
+
+Not yet implemented:
+
+- Modern Kotlin + Compose app baseline
+- Article domain/model layer
+- Reducer and ViewModel implementation
+- Compose list/detail UI screens
+- Unit tests and Android CI
+
+## What this project will teach
 
 - How to keep shared state synchronized across multiple screens
 - How to migrate legacy Android Architecture Components patterns to modern Kotlin/Compose architecture
-- How to structure tests for reducer and ViewModel logic
+- How to structure reducer and ViewModel tests
 
 ## Original problem
 
@@ -15,9 +34,9 @@ The original project shared an `Article` model between screens:
 - Detail screen edits a selected Article
 - Save should update the list state immediately
 
-## Modern solution
+## Planned modern solution
 
-This repository preserves the original idea but provides a modern baseline using:
+The future modern version will provide:
 - Kotlin + Compose UI
 - ViewModel
 - StateFlow
@@ -26,19 +45,13 @@ This repository preserves the original idea but provides a modern baseline using
 ## Quick start
 
 1. Clone the repository
-2. Build with Gradle
-
-```bash
-./gradlew test
-./gradlew assembleDebug
-```
+2. Work in sequence with the migration PRs in this repository
 
 ## Project structure
 
-- `README.md`: project purpose and usage
-- `app/`: modern Kotlin/Compose sample app
-- `docs/`: migration notes and guides
-- `.github/`: issue/pr templates and CI config
+- `README.md`: project purpose and progress
+- `docs/`: migration notes and legacy baseline records
+- `.github/`: pull request and issue templates
 
 ## Migration docs
 
@@ -49,10 +62,12 @@ This repository preserves the original idea but provides a modern baseline using
 - [x] Preserve legacy baseline as archive
 - [x] Preserve legacy 2017 snapshot (`legacy/2017-original`, `v0.0.0-legacy-2017`)
 - [ ] Add modern app baseline
-- [ ] Add Article domain/model and reducer tests
-- [ ] Add ViewModel tests
+- [ ] Add Article domain/model and reducer
+- [ ] Add ArticleListReducer tests
+- [ ] Add ViewModel + StateFlow implementation
 - [ ] Add Compose screens
-- [ ] Add CI workflow
+- [ ] Add unit tests
+- [ ] Add Android CI workflow
 
 ## Contributing
 

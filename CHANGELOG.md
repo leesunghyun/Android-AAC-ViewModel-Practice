@@ -1,12 +1,9 @@
 # Changelog
 
-## v0.1.0-oss-alpha.1
+## Unreleased
 
 ### Added
-- Modern Kotlin + Compose app baseline
-- Article shared-state project goal and identity cleanup
-- Preserve legacy 2017 snapshot and archive marker
-- Beginner-oriented migration documentation references
-
-### Preserved
-- Original 2017 Android AAC ViewModel sample as legacy archive
+- Rewrote README for OSS migration lab direction and status
+- Added OSS metadata files
+- Added GitHub pull request and issue templates
+- Preserved original README in docs as legacy architecture archive

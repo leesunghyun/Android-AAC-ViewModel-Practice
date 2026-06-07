@@ -1,3 +1,7 @@
+> This document preserves the original README and legacy architecture notes.
+> It describes the 2017-era sample and may reference old Android tooling.
+> The modern migration documentation will be added from the next doc set (for example, `docs/02-modern-architecture.md`).
+
 # 2017 Legacy Architecture
 
 ### Demo
@@ -29,19 +33,19 @@ Single Activity Pattern is used and all screens are configured as Fragment.
 各画面で共通のモデルを使う場合、データを全て同期したViewとして管理するためです。
 LiveDataとViewModelを使う以前には、RxBusなどを使ってBackgroundのViewを更新しました。
 Backgroundのリストのデータを更新するためには変更されたItemをリスト検索を通じて探した後更新する。
-同じモデルを使う画面が増えるほどメンテナンスが難しい問題がありました。
+同じモデルを使う画面が増えるほどメン테ナンスが難しい問題がありました。
 
 このpractice projectは一つのモデルを二つのFragmentで共有するように作られました。
-ArticleListFragment가があって、Article ListのItemをクリックする場合、ArticleDetailFragmentに遷移します。
+ArticleListFragment가가あって、Article ListのItemをクリックする場合、ArticleDetailFragmentに遷移します。
 ArticleDetailFragmentではArticleを修正することが可能で、保存する場合、BackgroundにあるArticleListFragmentのUiも最新状態に更新されます。
 
 ### Single Activity Pattern使用
-ViewModelの場合、Activity単位で生成することが可能で、違うActivity間のViewModelの共有は難しいと判断し
+ViewModelの場合、Activity単位で生成することが可能で、違うActivity間のViewModelを共有することは難しいと判断し
 Single Activity Patternを利用して全ての画面をFragmentで構成しました。
 
 ### 목적
 각 화면에서 공통의 모델을 사용하는경우 데이터를 모두 동기화하여 동일한 View로 관리하기 위해서입니다.  
-LiveData 및 ViewModel을 사용하기 전에는 RxBus를 통해서 백그라운드의 View를 갱신하였었습니다.  
+LiveData 및 ViewModel을 사용하기 전에는 RxBus를 통해서 백그라운드의 View를 갱신하였습니다.  
 백그라운드의 리스트의 데이터를 갱신하기 위해서는 변경된 Item을 리스트 검색을 통하여 찾은 후 갱신해야 하는 것.  
 동일한 모델을 사용하는 화면이 많아질수록 유지보수 하기가 어려워진다는 문제가 있었습니다.
 
