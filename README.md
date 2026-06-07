@@ -141,7 +141,7 @@ Only `app/` is built in the first alpha.
 ## Next milestones (planned, v0.2)
 
 - [ ] Add UI tests for article edit/delete interactions
-- [ ] Add `collectAsStateWithLifecycle` in Compose state collection
+- [x] Add `collectAsStateWithLifecycle` in Compose state collection
 - [ ] Replace demo placeholder with real screen recording (`docs/images/demo.gif`)
 - [ ] Improve Article detail validation UX
 - [ ] Prepare v0.2.0 roadmap and release notes
