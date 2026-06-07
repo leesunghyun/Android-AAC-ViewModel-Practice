@@ -5,6 +5,12 @@ TAG="v0.1.0-oss-alpha.1"
 RELEASE_NOTES="docs/release-notes-${TAG}.md"
 RELEASE_NAME="${TAG} - Android ViewModel Migration Lab Alpha"
 
+create_release() {
+  gh release create "$TAG" \
+    --title "$RELEASE_NAME" \
+    --notes-file "$RELEASE_NOTES"
+}
+
 if ! command -v gh >/dev/null 2>&1; then
   echo "gh CLI is required: https://cli.github.com/"
   exit 1
@@ -29,12 +35,16 @@ git pull origin main
 
 if git rev-parse --verify "$TAG" >/dev/null 2>&1; then
   echo "Tag $TAG already exists locally."
+  if gh release view "$TAG" >/dev/null 2>&1; then
+    echo "Release $TAG already exists."
+    exit 0
+  fi
+  echo "Tag exists but release is missing. Creating release for existing tag."
+  create_release
   exit 0
 fi
 
 git tag "$TAG"
 git push origin "$TAG"
 
-gh release create "$TAG" \
-  --title "$RELEASE_NAME" \
-  --notes-file "$RELEASE_NOTES"
+create_release
