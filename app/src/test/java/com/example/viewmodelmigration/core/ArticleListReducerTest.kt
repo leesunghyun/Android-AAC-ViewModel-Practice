@@ -25,6 +25,25 @@ class ArticleListReducerTest {
     }
 
     @Test
+    fun selectArticle_invalidId_clearsSelectionForInvalidStateSafety() {
+        val oldState = ArticleListUiState(
+            articles = listOf(
+                Article(id = "1", title = "One", body = "Body 1"),
+                Article(id = "2", title = "Two", body = "Body 2")
+            ),
+            selectedArticleId = "1"
+        )
+
+        val newState = ArticleListReducer.reduce(
+            state = oldState,
+            action = ArticleListAction.SelectArticle("missing-id")
+        )
+
+        assertEquals(null, newState.selectedArticleId)
+        assertEquals(oldState.articles, newState.articles)
+    }
+
+    @Test
     fun updateArticle_updatesArticleInList() {
         val oldArticle = Article(
             id = "1",

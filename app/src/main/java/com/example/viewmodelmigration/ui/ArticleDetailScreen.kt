@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,6 +33,10 @@ fun ArticleDetailScreen(
         mutableStateOf(article.body)
     }
 
+    val isTitleInvalid = titleState.isBlank()
+    val isBodyInvalid = bodyState.isBlank()
+    val canSave = titleState.isNotBlank() && bodyState.isNotBlank()
+
     Column(
         modifier = Modifier.padding(16.dp)
     ) {
@@ -45,8 +50,16 @@ fun ArticleDetailScreen(
             onValueChange = {
                 titleState = it
             },
+            isError = isTitleInvalid,
             label = {
                 Text("Title")
+            },
+            supportingText = if (isTitleInvalid) {
+                {
+                    Text("Title is required")
+                }
+            } else {
+                null
             }
         )
 
@@ -58,13 +71,30 @@ fun ArticleDetailScreen(
             onValueChange = {
                 bodyState = it
             },
+            isError = isBodyInvalid,
             label = {
                 Text("Body")
+            },
+            supportingText = if (isBodyInvalid) {
+                {
+                    Text("Body is required")
+                }
+            } else {
+                null
             }
         )
 
+        if (!canSave) {
+            Text(
+                text = "Both title and body are required before saving.",
+                color = MaterialTheme.colorScheme.error,
+                modifier = Modifier.padding(top = 8.dp)
+            )
+        }
+
         Button(
             modifier = Modifier.testTag("detail-save-button"),
+            enabled = canSave,
             onClick = {
                 onSaveClick(
                     article.copy(
