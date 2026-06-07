@@ -2,7 +2,7 @@
 
 A beginner-friendly OSS migration lab that modernizes a 2017 Android AAC ViewModel shared-state sample with Kotlin, Compose, ViewModel, and StateFlow.
 
-This repository is now in the **release preparation phase** of the OSS rebuild.
+This repository is now in the **release readiness phase** of the OSS rebuild.
 
 ## Current status
 

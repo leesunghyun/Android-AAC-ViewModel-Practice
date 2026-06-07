@@ -5,6 +5,7 @@
 ## 1) Prerequisites
 
 - PR #9(`Prepare v0.1.0 OSS alpha release notes`)가 main에 머지되어야 함
+- PR #11(`Add tag-triggered release workflow for v0.1.0 alpha`)가 main에 머지되어야 함
 - `README.md`, `CHANGELOG.md`에 릴리스 항목이 반영되어 있어야 함
 - CI(`./gradlew test`, `./gradlew assembleDebug`)가 통과해야 함
 
@@ -46,7 +47,22 @@ gh release create v0.1.0-oss-alpha.1 \
 
 자동 릴리스는 수동 릴리스 명령을 대체하지 않습니다. 수동과 자동 둘 다 허용됩니다.
 
-## 4) 릴리스 제한 범위(1차 Alpha)
+## 4) 원클릭 릴리스 스크립트(선택)
+
+```bash
+./scripts/release-v0.1.0-oss-alpha.1.sh
+```
+
+이 스크립트는 다음을 순차로 수행합니다.
+
+- `docs/release-notes-v0.1.0-oss-alpha.1.md` 존재 확인
+- `./gradlew test`, `./gradlew assembleDebug` 실행
+- `v0.1.0-oss-alpha.1` 태그 생성/푸시
+- GitHub Release 생성
+
+자동 릴리스가 필요한 경우에는 별도 단계가 필요하지 않으며, 스크립트는 안전한 수동 대안으로 활용할 수 있습니다.
+
+## 5) 릴리스 제한 범위(1차 Alpha)
 
 - DI(Hilt/Dagger) 미적용
 - Navigation 라이브러리 미적용
