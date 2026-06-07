@@ -15,9 +15,7 @@ Completed in this phase:
 
 Not yet implemented:
 
-- Modern Kotlin + Compose app baseline
-- Article domain/model layer
-- Reducer and ViewModel implementation
+- ViewModel + Reducer/StateFlow integration
 - Compose list/detail UI screens
 - Unit tests and Android CI
 
@@ -65,8 +63,8 @@ The future modern version will provide:
 - [x] Preserve legacy baseline as archive (`legacy-app/`)
 - [x] Preserve legacy 2017 snapshot (`legacy/2017-original`, `v0.0.0-legacy-2017`)
 - [x] Move original app code into `legacy-app/`
-- [ ] Add modern app baseline
-- [ ] Add Article domain/model and reducer
+- [x] Add modern app baseline
+- [x] Add Article domain/model and reducer
 - [ ] Add ArticleListReducer tests
 - [ ] Add ViewModel + StateFlow implementation
 - [ ] Add Compose screens
