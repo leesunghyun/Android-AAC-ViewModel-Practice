@@ -17,12 +17,9 @@ Completed in this phase:
 - Compose list/detail screens implemented
 - Android CI workflow added
 - Release workflow added for `v0.1.0-oss-alpha.1` tag push
-
-Not yet implemented:
-
-- OSS release preparation:
-  - `v0.1.0-oss-alpha.1` 태그 생성
-  - GitHub Release 게시
+- `v0.1.0-oss-alpha.1` first OSS alpha release is published
+  - GitHub Release: `v0.1.0-oss-alpha.1`
+  - Sample debug APK: `app-debug.apk`
 
 ## What this project will teach
 
