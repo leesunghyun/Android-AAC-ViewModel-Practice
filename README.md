@@ -1,52 +1,80 @@
-### Demo
-![](http://cfile24.uf.tistory.com/image/23332E3C592E268C34689B)
+# Android ViewModel Migration Lab
 
+A beginner-friendly OSS migration lab that modernizes a 2017 Android AAC ViewModel shared-state sample with Kotlin, Compose, ViewModel, and StateFlow.
 
-### Branch
-basic-livedata-viewmodel > Use LiveData, ViewModel.  
-dagger > Use LiveData, ViewModel, Dagger2.  
-dagger-databinding -> Use LiveData, ViewModel, Dagger2, DataBinding.
+This repository is in the **OSS setup phase** of the migration.
 
-### purpose
+## Current status
 
-If you use a same model in each screen, I want to synchronize all the model and manage and update same views.
-Before using LiveData and ViewModel, I had to update the View in the background through RxBus.
-The problem was that the more screens using the same model, the more difficult it was to maintain.
+Completed in this phase:
 
-This practice project has made one and the same model shared by two fragments. 
-There is an ArticleListFragment, go to ArticleDetailFragment when you click Item in Article List. 
-The ArticleDetailFragment can modify the Article and save, 
-the UI of the ArticleListFragment in the background is also updated to the latest state.
+- Project direction clarified as `Android ViewModel Migration Lab`
+- Legacy README preserved as historical documentation
+- OSS metadata files added (`LICENSE`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`)
+- GitHub issue/PR templates added
 
-### Using Single Activity Pattern
-Since ViewModel can be created in Activity unit, 
-it is difficult to share ViewModel between different activities. 
-Single Activity Pattern is used and all screens are configured as Fragment.
+Not yet implemented:
 
-### 目的
-各画面で共通のモデルを使う場合、データを全て同期したViewとして管理するためです。
-LiveDataとViewModelを使う以前には、RxBusなどを使ってBackgroundのViewを更新しました。
-Backgroundのリストのデータを更新するためには変更されたItemをリスト検索を通じて探した後更新する。
-同じモデルを使う画面が増えるほどメンテナンスが難しい問題がありました。
+- Modern Kotlin + Compose app baseline
+- Article domain/model layer
+- Reducer and ViewModel implementation
+- Compose list/detail UI screens
+- Unit tests and Android CI
 
-このpractice projectは一つのモデルを二つのFragmentで共有するように作られました。
-ArticleListFragment가があって、Article ListのItemをクリックする場合、ArticleDetailFragmentに遷移します。
-ArticleDetailFragmentではArticleを修正することが可能で、保存する場合、BackgroundにあるArticleListFragmentのUiも最新状態に更新されます。
+## What this project will teach
 
-### Single Activity Pattern使用
-ViewModelの場合、Activity単位で生成することが可能で、違うActivity間のViewModelの共有は難しいと判断し
-Single Activity Patternを利用して全ての画面をFragmentで構成しました。
+- How to keep shared state synchronized across multiple screens
+- How to migrate legacy Android Architecture Components patterns to modern Kotlin/Compose architecture
+- How to structure reducer and ViewModel tests
 
-### 목적
-각 화면에서 공통의 모델을 사용하는경우 데이터를 모두 동기화하여 동일한 View로 관리하기 위해서입니다.  
-LiveData 및 ViewModel을 사용하기 전에는 RxBus를 통해서 백그라운드의 View를 갱신하였었습니다.  
-백그라운드의 리스트의 데이터를 갱신하기 위해서는 변경된 Item을 리스트 검색을 통하여 찾은 후 갱신해야 하는 것.  
-동일한 모델을 사용하는 화면이 많아질수록 유지보수 하기가 어려워진다는 문제가 있었습니다.
+## Original problem
 
-이 연습 프로젝트는 하나의 동일한 모델을 두개의 프라그먼트에서 공유하여 사용하도록 만들었습니다.
-ArticleListFragment가 있으며, Article List의 Item을 클릭할 경우 ArticleDetailFragment로 이동합니다.
-ArticleDetailFragment에서는 Article을 수정할 수 있으며 저장할 경우 백그라운드에 있는 ArticleListFragment의 UI도 최신 상태로 갱신됩니다.
+The original project shared an `Article` model between screens:
+- List screen shows Articles
+- Detail screen edits a selected Article
+- Save should update the list state immediately
 
-### Single Activity Pattern 사용
-ViewModel의 경우 Activity 단위로 생성하는것이 가능하므로 서로 다른 Activity간의 ViewModel을 공유하는것은 어렵다고 판단하여
-Single Activity Pattern을 사용하며 모든 화면을 Fragment로 구성하였습니다.
+## Planned modern solution
+
+The future modern version will provide:
+- Kotlin + Compose UI
+- ViewModel
+- StateFlow
+- Reducer-style state updates
+
+## Quick start
+
+1. Clone the repository
+2. Work in sequence with the migration PRs in this repository
+
+## Project structure
+
+- `README.md`: project purpose and progress
+- `docs/`: migration notes and legacy baseline records
+- `.github/`: pull request and issue templates
+
+## Migration docs
+
+- [2017 Legacy Architecture](docs/01-legacy-architecture.md)
+- [Migration Task Plan (source of truth)](docs/oss-remake-task-plan.md)
+- [Historical planning references](docs/planning/archive/oss-remake-plan-reference.md)
+
+## Roadmap
+
+- [x] Preserve legacy baseline as archive
+- [x] Preserve legacy 2017 snapshot (`legacy/2017-original`, `v0.0.0-legacy-2017`)
+- [ ] Add modern app baseline
+- [ ] Add Article domain/model and reducer
+- [ ] Add ArticleListReducer tests
+- [ ] Add ViewModel + StateFlow implementation
+- [ ] Add Compose screens
+- [ ] Add unit tests
+- [ ] Add Android CI workflow
+
+## Contributing
+
+Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) and add small, focused changes.
+
+## License
+
+Apache-2.0. See [`LICENSE`](LICENSE).
