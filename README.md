@@ -45,7 +45,35 @@ The modern version provides:
 ## Quick start
 
 1. Clone the repository
-2. Work in sequence with the migration PRs in this repository
+   ```bash
+   git clone https://github.com/leesunghyun/Android-AAC-ViewModel-Practice.git
+   cd Android-AAC-ViewModel-Practice
+   ```
+2. Build tests (first-time setup complete on CI)
+   ```bash
+   ./gradlew test
+   ```
+3. Build and install the debug app
+   ```bash
+   ./gradlew assembleDebug
+   ./gradlew installDebug
+   ```
+4. Open the project in Android Studio and run `app`.
+
+## Demo preview
+
+The first alpha flow is: `List → Detail/Edit → Save → List` with shared state update.
+
+![v0.1.0 OSS alpha demo placeholder](docs/assets/v0.1.0-oss-alpha-demo-placeholder.svg)
+
+## Release status
+
+- First OSS alpha release: [v0.1.0-oss-alpha.1](https://github.com/leesunghyun/Android-AAC-ViewModel-Practice/releases/tag/v0.1.0-oss-alpha.1)
+- APK is provided as a sample debug artifact for manual smoke testing (not production release).
+
+For full release details and run verification commands, see:
+- [Release Notes](docs/release-notes-v0.1.0-oss-alpha.1.md)
+- [Release Guide](docs/release-guide-v0.1.0-oss-alpha.1.md)
 
 ## Project structure
 
@@ -81,6 +109,14 @@ The modern version provides:
 - [x] Add Android CI workflow
 - [x] Publish migration document bundle
 - [x] Add release notes and changelog section for v0.1.0-oss-alpha.1
+
+## Next milestones (draft)
+
+- [ ] Add UI tests for article edit/delete interactions
+- [ ] Add `collectAsStateWithLifecycle` in Compose state collection
+- [ ] Replace placeholder demo image with real screen recording
+- [ ] Improve Article detail validation UX
+- [ ] Prepare v0.2.0 roadmap and release notes
 
 ## Contributing
 
