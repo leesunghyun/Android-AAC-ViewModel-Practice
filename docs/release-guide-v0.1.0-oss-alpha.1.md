@@ -36,6 +36,16 @@ gh release create v0.1.0-oss-alpha.1 \
   --notes-file docs/release-notes-v0.1.0-oss-alpha.1.md
 ```
 
+### GitHub Actions 자동 릴리스(권장)
+
+`main`에서 `v0.1.0-oss-alpha.1` 태그를 push하면 `.github/workflows/release.yml`에서 `release` 잡이 자동으로 실행되어:
+
+- `./gradlew test`와 `./gradlew assembleDebug` 재확인
+- `docs/release-notes-v0.1.0-oss-alpha.1.md`를 사용한 GitHub Release 발행
+- `app-debug.apk`를 릴리스 자산으로 업로드
+
+자동 릴리스는 수동 릴리스 명령을 대체하지 않습니다. 수동과 자동 둘 다 허용됩니다.
+
 ## 4) 릴리스 제한 범위(1차 Alpha)
 
 - DI(Hilt/Dagger) 미적용
