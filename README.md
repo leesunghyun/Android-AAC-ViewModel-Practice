@@ -2,7 +2,7 @@
 
 A beginner-friendly OSS migration lab that modernizes a 2017 Android AAC ViewModel shared-state sample with Kotlin, Compose, ViewModel, and StateFlow.
 
-This repository is in the **OSS setup phase** of the migration.
+This repository is now in the **migration implementation phase** of the OSS rebuild.
 
 ## Current status
 
@@ -12,12 +12,17 @@ Completed in this phase:
 - Legacy README preserved as historical documentation
 - OSS metadata files added (`LICENSE`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`)
 - GitHub issue/PR templates added
+- Modern Kotlin/Compose baseline created
+- Article domain model, reducer, ViewModel, and tests added
+- Compose list/detail screens implemented
+- Android CI workflow added
 
 Not yet implemented:
 
-- ViewModel + Reducer/StateFlow integration
-- Compose list/detail UI screens
-- Unit tests and Android CI
+- OSS release preparation:
+  - `v0.1.0-oss-alpha.1` 릴리스 메모
+  - CHANGELOG 정리 및 공개 릴리스 노트
+- OSS release documentation workflow
 
 ## What this project will teach
 
@@ -55,7 +60,12 @@ The future modern version will provide:
 ## Migration docs
 
 - [2017 Legacy Architecture](docs/01-legacy-architecture.md)
+- [Modern Architecture](docs/02-modern-architecture.md)
+- [Shared State Problem](docs/03-shared-state-problem.md)
+- [LiveData to StateFlow](docs/04-livedata-to-stateflow.md)
+- [Compose UI Guide](docs/05-compose-ui.md)
 - [Migration Task Plan (source of truth)](docs/oss-remake-task-plan.md)
+- [Codex for OSS](docs/codex-for-oss.md)
 - [Historical planning references](docs/planning/archive/oss-remake-plan-reference.md)
 
 ## Roadmap
@@ -66,10 +76,12 @@ The future modern version will provide:
 - [x] Add modern app baseline
 - [x] Add Article domain/model and reducer
 - [x] Add ArticleListReducer tests
-- [ ] Add ViewModel + StateFlow implementation
-- [ ] Add Compose screens
-- [ ] Add unit tests
-- [ ] Add Android CI workflow
+- [x] Add ViewModel + StateFlow implementation
+- [x] Add Compose screens
+- [x] Add unit tests
+- [x] Add Android CI workflow
+- [x] Publish migration document bundle
+- [ ] Add release metadata for v0.1.0-oss-alpha.1
 
 ## Contributing
 
