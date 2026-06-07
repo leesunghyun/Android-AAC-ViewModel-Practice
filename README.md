@@ -16,6 +16,7 @@ Completed in this phase:
 - Article domain model, reducer, ViewModel, and tests added
 - Compose list/detail screens implemented
 - Android CI workflow added
+- Release workflow added for `v0.1.0-oss-alpha.1` tag push
 
 Not yet implemented:
 
@@ -38,7 +39,7 @@ The original project shared an `Article` model between screens:
 
 ## Planned modern solution
 
-The future modern version will provide:
+The modern version provides:
 - Kotlin + Compose UI
 - ViewModel
 - StateFlow

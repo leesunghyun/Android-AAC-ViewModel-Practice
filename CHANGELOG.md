@@ -16,6 +16,7 @@
 - Added Compose article list/detail screens
 - Added Android CI workflow
 - Added migration documentation set for modern architecture and state flow
+- Added release workflow for tag-triggered `v0.1.0-oss-alpha.1` publish
 
 ### Preserved
 
@@ -29,4 +30,4 @@
 ## Unreleased
 
 ### Added
-- Release note preparation for v0.1.0-oss-alpha.1
+- `v0.1.0-oss-alpha.1` tag와 GitHub Release 발행은 아직 대기 중입니다.

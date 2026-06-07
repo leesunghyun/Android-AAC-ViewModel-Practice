@@ -37,18 +37,30 @@ gh release create v0.1.0-oss-alpha.1 \
   --notes-file docs/release-notes-v0.1.0-oss-alpha.1.md
 ```
 
+### GitHub Actions 자동 릴리스(권장)
+
+`main`에서 `v0.1.0-oss-alpha.1` 태그를 push하면 `.github/workflows/release.yml`에서 `release` 잡이 자동으로 실행되어:
+
+- `./gradlew test`와 `./gradlew assembleDebug` 재확인
+- `docs/release-notes-v0.1.0-oss-alpha.1.md`를 사용한 GitHub Release 발행
+- `app-debug.apk`를 릴리스 자산으로 업로드
+
+자동 릴리스는 수동 릴리스 명령을 대체하지 않습니다. 수동과 자동 둘 다 허용됩니다.
+
 ## 4) 원클릭 릴리스 스크립트(선택)
 
 ```bash
 ./scripts/release-v0.1.0-oss-alpha.1.sh
 ```
 
-이 스크립트는 다음을 차례로 수행합니다.
+이 스크립트는 다음을 순차로 수행합니다.
 
 - `docs/release-notes-v0.1.0-oss-alpha.1.md` 존재 확인
 - `./gradlew test`, `./gradlew assembleDebug` 실행
 - `v0.1.0-oss-alpha.1` 태그 생성/푸시
 - GitHub Release 생성
+
+자동 릴리스가 필요한 경우에는 별도 단계가 필요하지 않으며, 스크립트는 안전한 수동 대안으로 활용할 수 있습니다.
 
 ## 5) 릴리스 제한 범위(1차 Alpha)
 
